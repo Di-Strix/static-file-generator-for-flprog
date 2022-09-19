@@ -56,10 +56,7 @@ function writeToTemplate(varName, data) {
       '0x' +
       value.toString(16).padStart(2, '0')
   )
-  return `#pragma once
-
-#include <Arduino.h>
-
+  return `
 #define ${varName}_HASH "${crypto.createHash('md5').update(data).digest('hex')}"
 #define ${varName}_LENGTH ${encodedData.length}
 const uint8_t ${varName}[] PROGMEM = {\n\t${encodedData.join(', ')}\n};
