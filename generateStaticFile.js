@@ -52,7 +52,7 @@ function generateCPPVariableName(inputFileName) {
 function writeToTemplate(varName, data) {
   const encodedData = Array.from(data).map(
     (value, index) =>
-      (index % 5 === 0 && index > 0 ? '//Comment for FLProg\n\t' : '') +
+      (index % 150 === 0 && index > 0 ? '//Comment for FLProg\n\t' : '') +
       '0x' +
       value.toString(16).padStart(2, '0')
   )
